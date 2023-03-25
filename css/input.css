@@ -1,0 +1,14 @@
+
+*{
+transition: 1s;}
+
+.scroll-hidden::-webkit-scrollbar {
+    height: 0px;
+    background: transparent; /* make scrollbar transparent */
+  }
+  header {position:fixed;
+    width: 100%;
+    z-index: 100;
+  color: rgb(15, 23, 42);}
+
+  

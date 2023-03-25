@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/input.css" />
+  <link rel="shortcut icon" href="./icons/free-icon-vr-glasses-2161752.png" type="image/x-icon" />
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>VR center</title>
+</head>
+<body class="bg-slate-900">
+  <header x-data="{ isOpen: false }" class=" lg:bg-gradient-to-r  from-pink-900 to-blue-900 blur-xs">
+    <nav class="container mx-auto px-6">
+      <div class="flex justify-between items-center w-full flex-col lg:flex-row">
+        <div class="flex flex-row items-center w-full lg:w-3/4 justify-between">
+          <div class="flex flex-row items-center">
+            <a class="text-white text-xl font-bold py-6  lg:text-2xl hover:text-gray-300" href="#">VR center</a>
+            <div
+              class=" ml-4 border-t-transparent flex items-start w-6 h-6 border-4 border-pink-400 border-double rounded-full animate-spin">
+            </div>
+          </div>
+          <div class="flex lg:hidden">
+            <!-- <button @click="isOpen = !isOpen" type="button"
+              class="text-white hover:text-gray-300 focus:outline-none focus:text-gray-300" aria-label="toggle menu">
+              <svg viewBox="0 0 24 24" class="h-6 w-6 fill-current">
+                <path fill-rule="evenodd"
+                  d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z">
+                </path>
+              </svg>
+            </button> -->
+            <style>
+            #burger-menu.open #burger-icon {
+              display: none;
+            }
+            
+            #burger-menu.open #x-icon {
+              display: inline-flex;
+            }
+          </style>
+            <nav class="">
+              <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                  <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                    </div>
+                   
+                  </div>
+                  <div class="-mr-2 flex md:hidden">
+                    <a id="burger-menu" class="text-gray-400 hover:text-white focus:outline-none focus:text-white">
+                        <img class="h-8 w-auto" src="./icons/free-icon-menu-5949947.png" alt="Logo">
+                        <svg class="h-6 w-6 fill-current">
+                          <path id="burger-icon"class="inline-flex"></path>
+                        </svg>
+                    </a>
+                  
+                  </div>
+                </div>
+              </div>
+              <div id="mobile-menu" :class="{ 'block': menuOpen, 'hidden': !menuOpen }" class="hidden md:hidden">
+                <div class="px-2 pt-2 pb-3 sm:px-3">
+                  <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white focus:outline-none focus:text-white focus:bg-gray-700">Home</a>
+            
+                  <a href="#" class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">Features</a>
+            
+                  <a href="#" class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">Pricing</a>
+            
+                  <a href="#" class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">About</a>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+         <div class="lg:flex items-center w-full bg-slate-800 text-white md:bg-transparent lg:text-white justify-end hidden">  <!--:class="isOpen ? 'block' : 'hidden' -->
+          <div class="flex flex-col mt-2 lg:flex-row lg:mt-0 lg:mx-1">
+            <a class="py-1 text-sm hover:text-gray-300 hover:underline lg:mx-4 md:my-0" href="#">Квесты</a>
+            <a class="text-sm py-1 hover:text-gray-300 hover:underline lg:mx-4 md:my-0" href="#">Дни
+              рождения</a>
+            <a class=" py-1 text-sm hover:text-gray-300 hover:underline lg:mx-4 md:my-0" href="#">Связь с
+              нами</a>
+            <a class="py-1 px-8 lg:min-w-28 text-sm rounded-2xl hover:text-slate-600 lg:mx-4 lg:my-0 bg-white text-gray-800 opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300"
+              href="#">Главная</a>
+          </div>
+        </div>
+    </nav>
+  </header>
+  <section class="bg-gradient-to-r from-pink-900 to-blue-900">
+    <div class="pt-24">
+      <div class="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center text-white">
+        <div class="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
+          <h1 class="my-4 text-5xl font-bold leading-tight">
+            Погрузитесь в мир цифровой иллюзии
+          </h1>
+          <p class="leading-normal text-2xl mb-8">
+            Мы проведём вам экскурсию
+          </p>
+        </div>
+        <div class="w-full md:w-3/5 py-6 text-center">
+          <img class="w-full md:w-4/5 z-50" src="/img/1.svg" />
+        </div>
+      </div>
+    </div>
+    <div class="relative -mt-12 lg:-mt-24">
+      <svg viewBox="0 0 1428 174" version="1.1" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <g transform="translate(-2.000000, 44.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <path
+              d="M0,0 C90.7283404,0.927527913 147.912752,27.187927 291.910178,59.9119003 C387.908462,81.7278826 543.605069,89.334785 759,82.7326078 C469.336065,156.254352 216.336065,153.6679 0,74.9732496"
+              opacity="0.100000001"></path>
+            <path
+              d="M100,104.708498 C277.413333,72.2345949 426.147877,52.5246657 546.203633,45.5787101 C666.259389,38.6327546 810.524845,41.7979068 979,55.0741668 C931.069965,56.122511 810.303266,74.8455141 616.699903,111.243176 C423.096539,147.640838 250.863238,145.462612 100,104.708498 Z"
+              opacity="0.100000001"></path>
+            <path
+              d="M1046,51.6521276 C1130.83045,29.328812 1279.08318,17.607883 1439,40.1656806 L1439,120 C1271.17211,77.9435312 1140.17211,55.1609071 1046,51.6521276 Z"
+              id="Path-4" opacity="0.200000003"></path>
+          </g>
+          <g transform="translate(-4.000000, 76.000000)" fill="#0f172a" fill-rule="nonzero">
+            <path
+              d="M0.457,34.035 C57.086,53.198 98.208,65.809 123.822,71.865 C181.454,85.495 234.295,90.29 272.033,93.459 C311.355,96.759 396.635,95.801 461.025,91.663 C486.76,90.01 518.727,86.372 556.926,80.752 C595.747,74.596 622.372,70.008 636.799,66.991 C663.913,61.324 712.501,49.503 727.605,46.128 C780.47,34.317 818.839,22.532 856.324,15.904 C922.689,4.169 955.676,2.522 1011.185,0.432 C1060.705,1.477 1097.39,3.129 1121.236,5.387 C1161.703,9.219 1208.621,17.821 1235.4,22.304 C1285.855,30.748 1354.351,47.432 1440.886,72.354 L1441.191,104.352 L1.121,104.031 L0.457,34.035 Z">
+            </path>
+          </g>
+        </g>
+      </svg>
+    </div>
+  </section>
+  <section>
+    <div class="bg-slate-900 text-white">
+      <div class="container mx-auto flex flex-col md:flex-row items-center my-12 md:my-24">
+        <div class="flex flex-col w-full lg:w-1/3 justify-center items-start p-8">
+          <h1
+            class="text-4xl md:text-5xl p-2 text-transparent  bg-clip-text bg-gradient-to-r from-pink-700 to-blue-600 tracking-loose">
+            Что такое VR?</h1>
+          <h2 class="text-xl md:text-4xl leading-relaxed md:leading-snug mb-2">Виртуальная реальность
+          </h2>
+          <p class="text-sm md:text-base text-gray-50 mb-4">созданная техническими средствами мир, передаваемый
+            человеку
+            через его ощущения: зрение, слух, осязание и другие. Виртуальная реальность имитирует как воздействие, так
+            и
+            реакции на воздействие.</p>
+        </div>
+        <div class="mt-28 mb-6 md:mb-0 md:mt-0 ml-0 md:ml-12 lg:w-1/3  justify-center">
+          <div class="h-48 flex flex-wrap content-center">
+            <div class="w-[200px] h-[400px] mx-16">
+              <img src="/img/kent1.jpg" alt=""
+                class="w-full h-full object-none rounded-full origin-center md:-rotate-[25deg]">
+            </div>
+            <div class="w-[140px] h-[250px] ml-12 mt-28 hidden lg:block">
+              <img src="/img/kent2.jpg" alt=""
+                class="w-full h-full object-none rounded-full origin-center md:-rotate-[25deg]">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="bg-slate-900">
+    <h4
+      class="text-4xl font-bold uppercase text-center text-transparent  bg-clip-text bg-gradient-to-r from-pink-700 to-blue-600">
+      Игры</h4>
+
+    </div>
+  </section>
+
+
+
+  <section>
+    <div class="bg-slate-900">
+      <div class="container rounded-lg shadow-2xl mx-auto my-10 px-6 py-8">
+        <h4
+          class=" p-10 text-4xl font-bold uppercase text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-700 to-blue-600">
+          Наш Тариф</h4>
+        <style>
+          .card-active {
+            background: rgba(0, 80, 252, 0.705);
+          }
+        </style>
+        <div class="mt-6 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 xl:mt-12 xl:gap-12">
+          <div
+            class="card-item flex flex-col items-center w-full bg-slate-800 text-white space-y-8 rounded-lg p-8 text-center">
+            <div class="w-fit text-3xl font-bold text-center shadow rounded-xl p-4">
+              Будни
+            </div>
+            <ul class=" w-full text-center text-sm">
+              <li class="w-full font-bold pb-2">
+                <h2 class="font-bold text-dark mb-5 text-[24px]">
+                  100₽<span class="text-base text-body-color font-medium">/ 5 мин</span></h2>
+              </li>
+              <li class="w-full font-bold pb-2">
+                <h2 class="font-bold text-dark mb-5 text-[24px]">
+                  200₽<span class="text-base text-body-color font-medium">/ 10 мин</span></h2>
+              </li>
+              <li class="w-full font-bold pb-2">
+                <h2 class="font-bold text-dark mb-5 text-[24px]">
+                  300₽<span class="text-base text-body-color font-medium">/ 15 мин</span></h2>
+              </li>
+              <li class="w-full font-bold pb-2">
+                <h2 class="font-bold text-dark mb-5 text-[24px]">
+                  400₽<span class="text-base text-body-color font-medium">/ 20 мин</span></h2>
+              </li>
+              <li class="w-full font-bold pb-2">
+                <h2 class="font-bold text-dark mb-5 text-[24px]">
+                  500₽<span class="text-base text-body-color font-medium">/ 30 мин</span></h2>
+              </li>
+            </ul>
+            <button class="mt-10 w-full transform rounded-md bg-blue-600 px-4 py-2 text-white hover:bg-blue-500">
+              Арендовать</button>
+          </div>
+          <div
+            class="card-item flex flex-col items-center w-full bg-slate-800 text-white space-y-8 rounded-lg p-8 text-center">
+            <div class="w-fit text-3xl font-bold text-center shadow rounded-xl p-4">Автосимулятор </div>
+            <ul class=" w-full text-center text-sm">
+              <li class="w-full font-bold pb-2">
+                <h2 class="font-bold text-dark mb-5 text-[24px]"> 200₽<span
+                    class="text-base text-body-color font-medium">/ 5 мин</span></h2>
+              </li>
+              <li class="w-full font-bold pb-2">
+                <h2 class="font-bold text-dark mb-5 text-[24px]"> 400₽<span
+                    class="text-base text-body-color font-medium">/ 10 мин</span></h2>
+              </li>
+              <li class="w-full font-bold pb-2">
+                <h2 class="font-bold text-dark mb-5 text-[24px]"> 500₽<span
+                    class="text-base text-body-color font-medium">/ 15 мин</span></h2>
+              </li>
+              <li class="w-full font-bold pb-2">
+                <h2 class="font-bold text-dark mb-5 text-[24px]"> 600₽<span
+                    class="text-base text-body-color font-medium">/ 20 мин</span></h2>
+              </li>
+              <li class="w-full font-bold pb-2">
+                <h2 class="font-bold text-dark mb-5 text-[24px]"> 700₽<span
+                    class="text-base text-body-color font-medium">/ 30 мин</span></h2>
+              </li>
+            </ul>
+            <button class="mt-10 w-full transform rounded-md bg-blue-600 px-4 py-2 text-white hover:bg-blue-500">
+              Арендовать</button>
+          </div>
+          <div
+            class="card-item flex flex-col items-center bg-slate-800 text-white space-y-8 rounded-lg p-8 text-center">
+            <div class="w-fit text-3xl font-bold text-center shadow rounded-xl p-4">Выходные</div>
+            <ul class=" w-full text-center text-sm">
+              <li class="w-full font-bold pb-2">
+                <h2 class="font-bold text-dark mb-5 text-[24px]">100₽<span
+                    class="text-base text-body-color font-medium">/ 5 мин</span></h2>
+              </li>
+              <li class="w-full font-bold pb-2">
+                <h2 class="font-bold text-dark mb-5 text-[24px]">200₽<span
+                    class="text-base text-body-color font-medium">/ 10 мин</span></h2>
+              </li>
+              <li class="w-full font-bold pb-2">
+                <h2 class="font-bold text-dark mb-5 text-[24px]">
+                  300₽<span class="text-base text-body-color font-medium">/ 15 мин</span></h2>
+              </li>
+              <li class="w-full font-bold pb-2">
+                <h2 class="font-bold text-dark mb-5 text-[24px]">
+                  400₽<span class="text-base text-body-color font-medium">/ 20 мин</span></h2>
+              </li>
+              <li class="w-full font-bold pb-2">
+                <h2 class="font-bold text-dark mb-5 text-[24px]">
+                  600₽<span class="text-base text-body-color font-medium">/ 30 мин</span></h2>
+              </li>
+            </ul>
+            <button class="mt-10 w-full transform rounded-md bg-blue-600 px-4 py-2 text-white hover:bg-blue-500">
+              Арендовать</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="mt-32">
+    <div class="max-w-screen-xl mx-auto px-5 bg-slate-900 text-white">
+
+      <div class="flex flex-col items-center">
+        <h2 class="font-bold uppercase text-2xl mt-5s">
+          Ответы
+        </h2>
+        <p class="text-gray-300 text-xl mt-3">
+          на часто задаваемые вопросы
+        </p>
+      </div>
+      <div class="grid max-w-xl mx-auto mt-8">
+        <div class="py-5 hover:bg-slate-800">
+          <details class="group">
+            <summary class="px-4 flex justify-between items-center font-medium cursor-pointer list-none">
+              <span>Какие условия работы</span>
+              <span class="transition group-open:rotate-180">
+                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
+                  stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
+                  <path d="M6 9l6 6 6-6"></path>
+                </svg>
+              </span>
+            </summary>
+            <p class="px-4 text-gray-400 mt-3">
+              Организация должна осуществлять работу в удобное для клиентов время. Режим работы VR центра должен быть
+              следующим:
+              - Рабочие часы с 10:00 до 22:00 с понедельника по воскресенье без перерывов и выходных дней.
+            </p>
+          </details>
+        </div>
+        <div class="py-5 hover:bg-slate-800">
+          <details class="group">
+            <summary class="px-4 flex justify-between items-center font-medium cursor-pointer list-none">
+              <span>Какое должно быть помещения</span>
+              <span class="transition group-open:rotate-180">
+                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
+                  stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
+                  <path d="M6 9l6 6 6-6"></path>
+                </svg>
+              </span>
+            </summary>
+            <p class="px-4 text-gray-400 mt-3">
+              VR центр должен иметь следующие особенности:
+              - Площадь помещения должна быть не менее 80-100 квадратных метров.
+              - Наличие удобных и просторных зон отдыха для посетителей.
+              - Наличие специальных зон регистрации, кассы и гардеробной.
+              - Наличие выделенной зоны для игроков, оснащенной подходящим оборудованием.
+              - Доступ к Wi-Fi и высокоскоростному мобильному интернету.
+            </p>
+          </details>
+        </div>
+        <div class="py-5 hover:bg-slate-800">
+          <details class="group">
+            <summary class="px-4 flex justify-between items-center font-medium cursor-pointer list-none">
+              <span>Какое должно быть необходимое оборудование</span>
+              <span class="transition group-open:rotate-180">
+                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
+                  stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
+                  <path d="M6 9l6 6 6-6"></path>
+                </svg>
+              </span>
+            </summary>
+            <p class="px-4 text-gray-400 mt-3">
+              Для проведения проекта необходим следующий список оборудования:
+              - Компьютеры высокой производительности для работы виртуальной реальности.
+              - VR-шлемы (HTC Vive, Oculus Rift, Samsung Gear, PlayStation VR и др).
+              - Руль, педали и геймпады для симуляторов вождения.
+              - Контроллеры движений для игр. </p>
+          </details>
+        </div>
+        <div class="py-5 hover:bg-slate-800">
+          <details class="group">
+            <summary class="px-4 flex justify-between items-center font-medium cursor-pointer list-none">
+              <span>Что вы представляете</span>
+              <span class="transition group-open:rotate-180">
+                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
+                  stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
+                  <path d="M6 9l6 6 6-6"></path>
+                </svg>
+              </span>
+            </summary>
+            <p class="px-4 text-gray-400 mt-3">
+              VR центр представляет собой современное мультимедийное помещение,
+              где посетители могут испытать на себе уникальные впечатления,
+              используя виртуальную реальность. Целью проекта является создание
+              инновационного развлекательного комплекса, который предложит посетителям
+              отличную возможность погрузиться в мир виртуальной реальности и испытать
+              настоящие эмоции.
+            </p>
+          </details>
+        </div>
+        <div class="py-5 hover:bg-slate-800">
+          <details class="group">
+            <summary class="px-4 flex justify-between items-center font-medium cursor-pointer list-none">
+              <span>Вредны ли очки виртуальной реальности для здоровья?</span>
+              <span class="transition group-open:rotate-180">
+                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
+                  stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
+                  <path d="M6 9l6 6 6-6"></path>
+                </svg>
+              </span>
+            </summary>
+            <p class="px-4 text-gray-400 mt-3">
+              Достоверных исследований, подтверждающих либо опровергающих причинение VR-устройствами вреда здоровью,
+              нет. Ученые сходятся во мнении,
+              что использование подобных гаджетов вряд ли приведет к значительным негативным
+              последствиям – потенциальный вред сопоставим, например,
+              с обычным телевизором или монитором компьютера.
+            </p>
+          </details>
+        </div>
+        <div class="py-5 hover:bg-slate-800">
+          <details class="group">
+            <summary class="px-4 flex justify-between items-center font-medium cursor-pointer list-none">
+              <span>Как снизить негативное воздействие VR-устройств на здоровье?</span>
+              <span class="transition group-open:rotate-180">
+                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
+                  stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
+                  <path d="M6 9l6 6 6-6"></path>
+                </svg>
+              </span>
+            </summary>
+            <p class="px-4 text-gray-400 mt-3">
+              Уменьшить вероятность появления побочных эффектов от использования очков виртуальной реальности просто –
+              достаточно соблюдать меры предосторожности, заявленные производителями VR-гаджетов:
+
+              контролируйте собственные ощущения;</li>
+              начинайте с малого при знакомстве с миром VR (от 30-60 мин.);</li>
+              выбирайте жанры фильмов и игр с учетом возрастных ограничений;</li>
+              освободите максимальное количество места вокруг – так точно ничего не сломаете и не причините себе травму;
+              </li>
+              выбирайте качественный контент без распада на пиксели и размыва картинки;</li>
+              настройте гаджет под себя, чтобы он не сильно сдавливал голову и переносицу, а звук был комфортным;</li>
+              ы детям младше 12 лет лучше пользоваться очками и шлемами в сопровождении родителей.</li>
+            </p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="bg-slate-900 -mb-16">
+
+    <div class="relative flex items-top justify-center min-h-screen bg-slate-900 sm:items-center sm:pt-0">
+      <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
+
+        <div class="mt-8 overflow-hidden">
+          <div class="grid grid-cols-1 md:grid-cols-2">
+            <div class="p-6 bg-gray-800 sm:rounded-lg">
+              <h1 class="text-4xl sm:text-5xl text-white">
+                Приходите
+              </h1>
+              <p class="text-normal text-lg sm:text-2xl font-medium text-gray-400 mt-2">
+                Мы будем рады видеть вас
+              </p>
+
+              <div class="flex items-center mt-8 text-gray-400">
+                <img src="./icons/free-icon-placeholder-149226.png" alt="" class="w-8 h-8 text-gray-500">
+                <div class="ml-4 text-md font-semibold w-40">
+                  Проспект Михаила Нагибина 34
+                </div>
+              </div>
+              <div class="flex items-center mt-4 text-gray-400">
+                <img src="./icons/free-icon-phones-1182788.png" alt="" class="w-8 h-8 text-gray-500">
+                <div class="ml-4 text-md font-semibold w-40">RU+7(999)695-71-61</div>
+              </div>
+              <div class="flex items-center mt-2 text-gray-600 dark:text-gray-400">
+                <img src="./icons/free-icon-email-482138.png" alt="" class="w-8 h-8 text-gray-500">
+                <div class="ml-4 text-md font-semibold w-40">
+                  info@vr-center.ru
+                </div>
+              </div>
+            </div>
+            <div class="flex s">
+              <script type="text/javascript" charset="utf-8" async
+                src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A964c62e7eb15c4b70da9bbeee16afd74a16510ae4b37c9c9d933b01895090f36&amp;width=600&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="text-white relative bg-slate-800 pt-30 pb-10 py-20">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-wrap text-left lg:text-left">
+        <div class="w-full lg:w-6/12 px-4">
+          <h4 class="text-3xl fonat-semibold text-blueGray-700">Vr Center</h4>
+          <h5 class="text-lg mt-0 mb-2 text-blueGray-600">Найдите нас на любой из этих платформ.</h5>
+          <div class="mt-6 lg:mb-0 mb-6">
+            <!-- <button
+              class="bg-white shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full mr-2"
+              >
+              <i class="fab fa-twitter"></i></button><button
+              class="bg-white text-lightBlue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full  mr-2"
+              >
+              <i class="fab fa-facebook-square"></i></button><button
+              class="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full mr-2"
+              >
+              <i class="fab fa-dribbble"></i></button><button
+              class="bg-white text-blueGray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none mr-2"
+             >
+              <i class="fab fa-github"></i>
+            </button> -->
+          </div>
+        </div>
+        <div class="w-full lg:w-6/12 px-4">
+          <div class="flex flex-wrap items-top mb-6">
+            <div class="w-full lg:w-4/12 px-4 ml-auto">
+              <span class="block uppercase  text-sm font-semibold mb-2">Наш адресс</span>
+              <ul>
+                <a class="font-semibold block pb-2 text-sm">Проспект Михаила
+                  Нагибина 34</a>
+              </ul>
+              </ul>
+            </div>
+            <div class="w-full lg:w-4/12 px-4">
+              <span class="block uppercase text-sm font-semibold mb-1">Наш номер телефона
+                +7(999)695-71-61</span>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr class="my-6">
+      <div class="flex flex-wrap items-center md:justify-between justify-center">
+        <div class="w-full md:w-4/12 px-4 mx-auto text-center">Copyright © 2023 Rostov-on-Don</div>
+      </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+<!-- <section>
+    <div class="bg-slate-900 p-8">
+      <div class="p-4 bg-slate-900 rounded-lg shadow-2xl py-8 mt-12 ">
+        <h4
+          class="text-4xl font-bold  tracking-widest uppercase text-center text-transparent  bg-clip-text bg-gradient-to-r from-pink-700 to-blue-600">
+          Представялем</h4>
+        <div class="grid grid-cols-2 md:grid-cols-2 gap-8 xl:gap-12 px-2 xl:px-12 mt-8 pl-40">
+          <div class="flex space-x-8 mt-8">
+            <div>
+              <img class="h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                src="./icons/free-icon-inner-dialogue-4576642.png" />
+            </div>
+            <div>
+              <h4 class=" text-xl font-bold text-white my-2">Лучшее оборудование</p>
+            </div>
+          </div>
+
+          <div class="flex space-x-8 mt-8">
+            <div>
+              <img class="h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                src="./icons/free-icon-inner-dialogue-4576642.png" />
+            </div>
+            <div>
+              <p class="text-xl font-bold text-white my-2">Обученный персонал</p>
+            </div>
+          </div>
+
+          <div class="flex space-x-8 mt-8">
+            <div>
+              <img class="h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                src="./icons/free-icon-inner-dialogue-4576642.png" />
+            </div>
+            <div>
+              <p class="text-xl font-bold text-white my-2">Вместимость 8 человек</p>
+            </div>
+          </div>
+          <div class="flex space-x-8 mt-8">
+            <div>
+              <img class="h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                src="./icons/free-icon-inner-dialogue-4576642.png" />
+            </div>
+            <div>
+              <p class="text-xl font-bold text-white my-2">Скидки в дни рождения</p>
+            </div>
+          </div>
+          <div class="flex space-x-8 mt-8">
+            <div>
+              <img class="h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                src="./icons/free-icon-inner-dialogue-4576642.png" />
+            </div>
+            <div>
+              <p class="text-xl font-bold text-white my-2">Скидочные купоны</p>
+            </div>
+          </div>
+          <div class="flex space-x-8 mt-8">
+            <div>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z">
+                </path>
+              </svg>
+            </div>
+            <div>
+              <p class="text-xl font-bold text-white my-2">У нас Более 50 игр</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
