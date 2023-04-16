@@ -1,0 +1,21 @@
+* {
+  transition: 1s;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  color: rgb(15, 23, 42);
+}
+
+.faq ul {
+  opacity: 0;
+  display: none;
+}
+
+.faq span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
